@@ -1,0 +1,137 @@
+# plguins list(for dein.vim)
+
+# required
+[[plugins]]
+repo = 'Shougo/dein.vim'
+
+# 補完プラグイン
+[[plugins]]
+repo = 'Shougo/deoplete.nvim'
+on_i = 1
+hook_add = '''
+  let g:deoplete#enable_camel_case = 1
+  let g:deoplete#enable_at_startup = 1
+  let g:deoplete#auto_complete_delay = 0
+  let g:deoplete#file#enable_buffer_path = 1
+  " For perlomni.vim setting.
+  let g:deoplete#omni_patterns = {}
+  let g:deoplete#omni_patterns.perl = '\h\w*->\h\w*\|\h\w*::'
+'''
+
+[[plugins]]
+repo = 'Shougo/vimproc.vim'
+hook_post_update = '''
+  if dein#util#_is_windows()
+    let cmd = 'tools\\update-dll-mingw'
+  elseif dein#util#_is_cygwin()
+    let cmd = 'make -f make_cygwin.mak'
+  elseif executable('gmake')
+    let cmd = 'gmake'
+  else
+    let cmd = 'make'
+  endif
+  let g:dein#plugin.build = cmd
+'''
+
+[[plugins]]
+on_i = 1
+repo = 'Shougo/neosnippet.vim'
+
+[[plugins]]
+on_i = 1
+repo = 'Shougo/neosnippet-snippets'
+
+[[plugins]]
+repo = 'Shougo/neomru.vim'
+
+[[plugins]]
+repo = 'Shougo/neoyank.vim'
+
+[[plugins]]
+repo = 'Shougo/denite.nvim'
+
+[[plugins]]
+repo = 'vim-perl/vim-perl'
+# よく使うモジュールの関数を拡張文法として見たいのでファイル移動して
+# syntaxディレクトリに移動させる
+hook_post_update = '''
+  let cp_to = g:liiu#vim_dir . '/after/syntax/perl/'
+  execute '! mkdir -p ' . cp_to
+  let repo_dir = g:liiu#dein_dir . '/repos/github.com/vim-perl/vim-perl/'
+  execute '! cp ' . repo_dir . 'contrib/moose.vim ' . cp_to
+  execute '! cp ' . repo_dir . 'contrib/try-tiny.vim ' . cp_to
+  execute '! cp ' . repo_dir . 'contrib/test-more.vim ' . cp_to
+  execute '! cp ' . repo_dir . 'contrib/carp.vim ' . cp_to
+'''
+hook_add = '''
+  " vim-perl で signatures の許可 sub sum($x, $y) {} みたいな書き方がokになる
+  let perl_sub_signatures = 1
+'''
+
+# 英単語補完
+[[plugins]]
+on_i = 1
+repo = 'ujihisa/neco-look'
+
+[[plugins]]
+on_i = 1
+repo = 'Shougo/vimshell.vim'
+
+[[plugins]]
+repo = 'scrooloose/nerdtree'
+
+[[plugins]]
+repo = 'hotchpotch/perldoc-vim'
+on_ft = ['perl']
+
+[[plugins]]
+repo = 'c9s/perlomni.vim'
+on_ft = ['unknown']
+
+[[plugins]]
+repo = 'derekwyatt/vim-scala'
+on_ft = ['scala']
+
+[[plugins]]
+repo = 'plasticboy/vim-markdown'
+on_ft = ['markdown']
+
+[[plugins]]
+repo = 'rust-lang/rust.vim'
+on_ft = ['rust']
+
+# rust omini
+[[plugins]]
+repo = 'racer-rust/vim-racer'
+on_ft = ['rust']
+hook_add = '''
+  let g:racer_cmd = '/home/leiu/.cargo/bin/racer'
+'''
+
+[[plugins]]
+repo = 'cespare/vim-toml'
+on_ft = ['toml']
+
+## color schemes
+
+[[plugins]]
+repo = 'nanotech/jellybeans.vim'
+# hook_add = '''
+#  augroup liiu_set_color_schema
+#    autocmd!
+#    autocmd VimEnter * nested colorscheme jellybeans
+#  augroup END
+# '''
+
+[[plugins]]
+repo = 'w0ng/vim-hybrid'
+hook_add = '''
+  set background=dark
+  " colorscheme 設定は source 後に行う必要があるので VimEnter で行う。
+  " 但し Colorscheme イベントの発生が抑制されないよう nented を付ける。
+  augroup liiu_set_color_schema
+    autocmd!
+    autocmd VimEnter * nested colorscheme hybrid
+  augroup END
+'''
+
