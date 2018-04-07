@@ -17,6 +17,9 @@ set hidden
 " 256色使用
 set t_Co=256
 set termguicolors
+" escape delay 
+set ttimeoutlen=10
+
 " コメント行改行時に, 下の行もコメントの続きにしない設定
 augroup auto_comment_off
 	autocmd!

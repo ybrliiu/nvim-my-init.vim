@@ -1,0 +1,30 @@
+snippet compro_easy
+  use v5.18;
+  use warnings;
+  sub read_line { chomp(my $str = <STDIN>); $str }
+  sub splited_read_line { split / /, read_line }
+  ${1}
+
+snippet compro_hard
+  use v5.18;
+  use warnings;
+  use Data::Dumper;
+  sub read_line { chomp(my $str = <STDIN>); $str }
+  sub splited_read_line { split / /, read_line }
+  sub accessor {
+    my $name = shift; my $pkg = caller; no strict 'refs';
+    *{"${pkg}::${name}"} = sub { use strict 'refs';
+      my $self = shift; @_ ? $self->{$name} = shift : $self->{$name} } }
+
+	${1}
+
+snippet class
+  package ${1} {
+
+    use Mouse;
+    ${2}
+
+  }
+
+  1;
+
