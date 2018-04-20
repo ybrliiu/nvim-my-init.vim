@@ -42,3 +42,4 @@ set autoindent
 " 改行時に入力された行の末尾に合わせて次の行のインデントを増減する
 set smartindent   
 
+setlocal path+=./lib
