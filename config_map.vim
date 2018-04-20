@@ -3,6 +3,8 @@
 " Perltidy visual -> ,ptidy で整形
 map ,ptidy :'<,'>! perltidy
 
+nnoremap い i
+
 " k <=> j 入れ替え
 nnoremap j k
 nnoremap k j
