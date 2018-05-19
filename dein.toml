@@ -94,9 +94,13 @@ hook_add = '''
 on_i = 1
 repo = 'ujihisa/neco-look'
 
+# [[plugins]]
+# on_i = 1
+# repo = 'Shougo/vimshell.vim'
+
 [[plugins]]
 on_i = 1
-repo = 'Shougo/vimshell.vim'
+repo = 'tpope/vim-fugitive'
 
 [[plugins]]
 repo = 'scrooloose/nerdtree'
