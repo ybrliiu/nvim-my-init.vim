@@ -19,6 +19,8 @@ set t_Co=256
 set termguicolors
 " escape delay 
 set ttimeoutlen=10
+" mouseでの操作を許可
+set mouse=a
 
 " コメント行改行時に, 下の行もコメントの続きにしない設定
 augroup auto_comment_off

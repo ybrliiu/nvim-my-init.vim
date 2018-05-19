@@ -1,3 +1,42 @@
+snippet strict
+  use strict;
+  use warnings;
+  use utf8;
+  ${1}
+
+snippet dumper
+  use Data::Dumper;
+  warn Dumper ${1};
+
+snippet sig_die_confess
+  $SIG{__DIE__} = \&Carp::confess;
+
+snippet sig_warn_cluck
+  $SIG{__WARN__} = \&Carp::cluck;
+
+snippet class
+  package ${1} {
+
+    use Mouse;
+    ${2}
+
+  }
+
+  1;
+
+snippet neo_sangoku_entity_class
+  package NeoSangoku::Entity::${1} {
+
+    use Mouse;
+    use NeoSangoku::Exporter;
+    use NeoSangoku::Entity::TableAttributesCreator { table_name => ${2} };
+
+    __PACKAGE__->meta->make_immutable;
+
+  }
+
+  1;
+
 snippet compro_easy
   use v5.18;
   use warnings;
@@ -17,14 +56,4 @@ snippet compro_hard
       my $self = shift; @_ ? $self->{$name} = shift : $self->{$name} } }
 
 	${1}
-
-snippet class
-  package ${1} {
-
-    use Mouse;
-    ${2}
-
-  }
-
-  1;
 
