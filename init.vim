@@ -43,3 +43,6 @@ if dein#check_install()
   call dein#install()
 endif
 
+" statusline (プラグイン依存)
+source ~/.config/nvim/statusline.vim
+
