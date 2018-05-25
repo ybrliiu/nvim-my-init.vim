@@ -30,7 +30,6 @@ augroup auto_comment_off
 augroup END
 
 "" インデントの設定
-
 " タブ入力を複数の空白入力に置き換える
 set expandtab     
 " 画面上でタブ文字が占める幅
@@ -43,4 +42,10 @@ set softtabstop=2
 set autoindent    
 " 改行時に入力された行の末尾に合わせて次の行のインデントを増減する
 set smartindent   
+
+"" 画面分割時の開く方向の指定
+" 新しいウィンドウを下に開く
+set splitbelow
+" 新しいウィンドウを右に開く
+set splitright
 

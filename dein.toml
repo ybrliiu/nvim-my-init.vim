@@ -151,12 +151,13 @@ repo = 'nanotech/jellybeans.vim'
 [[plugins]]
 repo = 'w0ng/vim-hybrid'
 hook_add = '''
-  set background=dark
+
   " colorscheme 設定は source 後に行う必要があるので VimEnter で行う。
   " 但し Colorscheme イベントの発生が抑制されないよう nested を付ける。
   augroup liiu_set_color_schema
     autocmd!
     autocmd VimEnter * nested colorscheme hybrid
+    autocmd VimEnter * nested set background=dark
   augroup END
 '''
 
