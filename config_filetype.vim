@@ -16,4 +16,7 @@ augroup auto_comment_off
   " htmlのための設定
   autocmd BufNewFile,BufRead *.html.ep  set filetype=eruby.html
 
+  " vue
+  autocmd BufRead,BufNewFile *.vue setlocal filetype=vue.html.javascript.css
+
 augroup END

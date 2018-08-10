@@ -57,19 +57,22 @@ repo = 'Shougo/denite.nvim'
 
 # シンタクスチェックと警告チェックしてくれるやつ
 # あとでちゃんと設定を調べる
-#  [[plugins]]
-#  on_i = 1
-#  repo = 'w0rp/ale'
-#  hook_add = '''
-#  let g:ale_sign_column_always = 1
-#  let g:ale_linters = {
-#  \   'perl': ['perl', 'perlcritic'],
-#  \}
-#  
-#  " Perl
-#  let g:ale_perl_perl_executable = 'perl'
-#  let g:ale_perl_perl_options = '-c -Mwarnings -Ilib'
-#  '''
+[[plugins]]
+repo = 'w0rp/ale'
+on_i = 1
+hook_add = '''
+let g:ale_sign_column_always = 1
+let g:ale_linters = {
+\   'perl': ['perl'],
+\   'js': ['eslint'],
+\ }
+
+" Perl
+let g:ale_perl_perl_executable = 'perl'
+let g:ale_perl_perl_options = '-c -Ilib'
+
+" JavaScript
+'''
 
 [[plugins]]
 repo = 'vim-perl/vim-perl'
@@ -136,6 +139,10 @@ hook_add = '''
 [[plugins]]
 repo = 'cespare/vim-toml'
 on_ft = ['toml']
+
+[[plugins]]
+repo = 'posva/vim-vue'
+on_ft = ['vue']
 
 ## color schemes
 
