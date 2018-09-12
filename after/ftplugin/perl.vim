@@ -5,3 +5,11 @@ setlocal formatoptions-=r
 setlocal path+=lib
 setlocal path+=extlib
 setlocal path+=t/lib
+setlocal path+=local/lib/perl5
+
+" 画面上でタブ文字が占める幅
+setlocal tabstop=4
+" 自動インデントでずれる幅
+setlocal shiftwidth=4
+" 連続した空白に対してタブキーやバックスペースキーでカーソルが動く幅
+setlocal softtabstop=4

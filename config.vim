@@ -21,6 +21,8 @@ set termguicolors
 set ttimeoutlen=10
 " mouseでの操作を許可
 set mouse=a
+" コード折りたたみはいらん
+set foldmethod=manual
 
 " コメント行改行時に, 下の行もコメントの続きにしない設定
 augroup auto_comment_off
@@ -32,12 +34,13 @@ augroup END
 "" インデントの設定
 " タブ入力を複数の空白入力に置き換える
 set expandtab     
+
 " 画面上でタブ文字が占める幅
-set tabstop=2     
+set tabstop=2
 " 自動インデントでずれる幅
-set shiftwidth=2  
+set shiftwidth=2
 " 連続した空白に対してタブキーやバックスペースキーでカーソルが動く幅
-set softtabstop=2 
+set softtabstop=2
 " 改行時に前の行のインデントを継続する
 set autoindent    
 " 改行時に入力された行の末尾に合わせて次の行のインデントを増減する

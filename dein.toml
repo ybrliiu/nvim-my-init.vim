@@ -68,7 +68,7 @@ let g:ale_linters = {
 \ }
 
 " Perl
-let g:ale_perl_perl_executable = 'perl'
+let g:ale_perl_perl_executable = 'eki_dev_perl'
 let g:ale_perl_perl_options = '-c -Ilib'
 
 " JavaScript
@@ -152,19 +152,40 @@ repo = 'nanotech/jellybeans.vim'
 #  augroup liiu_set_color_schema
 #    autocmd!
 #    autocmd VimEnter * nested colorscheme jellybeans
+#    autocmd VimEnter * nested set background=dark
 #  augroup END
 # '''
 
 [[plugins]]
-repo = 'w0ng/vim-hybrid'
-hook_add = '''
+repo = 'tomasr/molokai'
+# hook_add = '''
+#  augroup liiu_set_color_schema
+#    autocmd!
+#    autocmd VimEnter * nested colorscheme molokai
+#    autocmd VimEnter * nested set background=dark
+#  augroup END
+# '''
 
-  " colorscheme 設定は source 後に行う必要があるので VimEnter で行う。
-  " 但し Colorscheme イベントの発生が抑制されないよう nested を付ける。
-  augroup liiu_set_color_schema
-    autocmd!
-    autocmd VimEnter * nested colorscheme hybrid
-    autocmd VimEnter * nested set background=dark
-  augroup END
+[[plugins]]
+repo = 'NLKNguyen/papercolor-theme'
+hook_add = '''
+ augroup liiu_set_color_schema
+   autocmd!
+   autocmd VimEnter * nested colorscheme PaperColor
+   autocmd VimEnter * nested set background=dark
+ augroup END
 '''
+
+[[plugins]]
+repo = 'w0ng/vim-hybrid'
+# hook_add = '''
+# 
+#   " colorscheme 設定は source 後に行う必要があるので VimEnter で行う。
+#   " 但し Colorscheme イベントの発生が抑制されないよう nested を付ける。
+#   augroup liiu_set_color_schema
+#     autocmd!
+#     autocmd VimEnter * nested colorscheme hybrid
+#     autocmd VimEnter * nested set background=dark
+#   augroup END
+# '''
 
