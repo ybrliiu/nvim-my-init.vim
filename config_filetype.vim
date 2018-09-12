@@ -9,8 +9,6 @@ augroup auto_comment_off
   autocmd BufNewFile,BufRead *.cgi    set filetype=perl
   autocmd BufNewFile,BufRead *.conf   set filetype=perl
   autocmd BufNewFile,BufRead cpanfile set filetype=perl
-  " template toolkit 2
-  autocmd BufRead,BufNewFile *.html set filetype=tt2html
 
  " rubyのための設定
   autocmd BufNewFile,BufRead *.html.erb set filetype=eruby.html

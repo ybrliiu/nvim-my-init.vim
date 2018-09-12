@@ -68,7 +68,7 @@ let g:ale_linters = {
 \ }
 
 " Perl
-let g:ale_perl_perl_executable = 'eki_dev_perl'
+let g:ale_perl_perl_executable = 'perl'
 let g:ale_perl_perl_options = '-c -Ilib'
 
 " JavaScript
