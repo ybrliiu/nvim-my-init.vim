@@ -5,6 +5,7 @@ setlocal formatoptions-=r
 setlocal path+=lib
 setlocal path+=extlib
 setlocal path+=t/lib
+setlocal path+=local/lib/perl5
 
 " 画面上でタブ文字が占める幅
 setlocal tabstop=4
