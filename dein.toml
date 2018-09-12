@@ -158,10 +158,20 @@ repo = 'nanotech/jellybeans.vim'
 
 [[plugins]]
 repo = 'tomasr/molokai'
+# hook_add = '''
+#  augroup liiu_set_color_schema
+#    autocmd!
+#    autocmd VimEnter * nested colorscheme molokai
+#    autocmd VimEnter * nested set background=dark
+#  augroup END
+# '''
+
+[[plugins]]
+repo = 'NLKNguyen/papercolor-theme'
 hook_add = '''
  augroup liiu_set_color_schema
    autocmd!
-   autocmd VimEnter * nested colorscheme molokai
+   autocmd VimEnter * nested colorscheme PaperColor
    autocmd VimEnter * nested set background=dark
  augroup END
 '''
