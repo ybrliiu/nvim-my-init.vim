@@ -21,6 +21,8 @@ set termguicolors
 set ttimeoutlen=10
 " mouseでの操作を許可
 set mouse=a
+" コード折りたたみはいらん
+set foldmethod=manual
 
 " コメント行改行時に, 下の行もコメントの続きにしない設定
 augroup auto_comment_off
