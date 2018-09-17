@@ -13,3 +13,6 @@ setlocal tabstop=2
 setlocal shiftwidth=2
 " 連続した空白に対してタブキーやバックスペースキーでカーソルが動く幅
 setlocal softtabstop=2
+
+" コードはおりたたまない
+setlocal foldmethod=manual
