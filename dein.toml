@@ -144,6 +144,10 @@ on_ft = ['toml']
 repo = 'posva/vim-vue'
 on_ft = ['vue']
 
+[[plugins]]
+repo = 'kchmck/vim-coffee-script'
+on_ft = ['coffee']
+
 ## color schemes
 
 [[plugins]]

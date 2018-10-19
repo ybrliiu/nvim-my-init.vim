@@ -21,4 +21,7 @@ augroup auto_comment_off
   " vue
   autocmd BufRead,BufNewFile *.vue setlocal filetype=vue.html.javascript.css
 
+  " coffee 
+  autocmd BufRead,BufNewFile *.coffee setlocal filetype=coffee
+
 augroup END
