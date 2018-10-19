@@ -144,6 +144,11 @@ on_ft = ['toml']
 repo = 'posva/vim-vue'
 on_ft = ['vue']
 
+# haskell omni
+[[plugins]]
+repo = 'eagletmt/neco-ghc'
+on_ft = ['haskell']
+
 ## color schemes
 
 [[plugins]]
