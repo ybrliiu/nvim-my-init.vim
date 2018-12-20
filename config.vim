@@ -23,6 +23,8 @@ set ttimeoutlen=10
 set mouse=a
 " コード折りたたみはいらん
 set foldmethod=manual
+" クリップボードに共有
+set clipboard+=unnamedplus
 
 " コメント行改行時に, 下の行もコメントの続きにしない設定
 augroup auto_comment_off
