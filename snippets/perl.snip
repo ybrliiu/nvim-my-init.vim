@@ -8,6 +8,9 @@ snippet dumper
   use Data::Dumper;
   warn Dumper ${0};
 
+snippet ddp
+  use DDP +{ deparse => 1, use_prototypes => 0 };
+
 snippet sig_die_confess
   $SIG{__DIE__} = \&Carp::confess;
 
