@@ -97,6 +97,12 @@ hook_add = '''
 on_i = 1
 repo = 'ujihisa/neco-look'
 
+# パッケージ名の自動展開
+[[plugins]]
+on_i = 1
+repo = 'SirVer/ultisnips'
+
+
 # [[plugins]]
 # on_i = 1
 # repo = 'Shougo/vimshell.vim'
