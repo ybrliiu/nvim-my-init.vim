@@ -97,6 +97,12 @@ hook_add = '''
 on_i = 1
 repo = 'ujihisa/neco-look'
 
+# パッケージ名の自動展開
+[[plugins]]
+on_i = 1
+repo = 'SirVer/ultisnips'
+
+
 # [[plugins]]
 # on_i = 1
 # repo = 'Shougo/vimshell.vim'
@@ -125,8 +131,17 @@ repo = 'plasticboy/vim-markdown'
 on_ft = ['markdown']
 
 [[plugins]]
+repo = 'aklt/plantuml-syntax'
+on_ft = ['plantuml']
+
+[[plugins]]
 repo = 'rust-lang/rust.vim'
 on_ft = ['rust']
+
+# experimental
+# [[plugins]]
+# repo = 'zxqfl/tabnine-vim'
+# on_ft = ['rust']
 
 # rust omini
 [[plugins]]
@@ -147,6 +162,11 @@ on_ft = ['vue']
 [[plugins]]
 repo = 'kchmck/vim-coffee-script'
 on_ft = ['coffee']
+
+# haskell omni
+[[plugins]]
+repo = 'eagletmt/neco-ghc'
+on_ft = ['haskell']
 
 ## color schemes
 

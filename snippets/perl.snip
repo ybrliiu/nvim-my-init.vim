@@ -1,12 +1,15 @@
 snippet strict
-  use strict;
+  use v5.28;
   use warnings;
   use utf8;
-  ${1}
+  ${0}
 
 snippet dumper
   use Data::Dumper;
-  warn Dumper ${1};
+  warn Dumper ${0};
+
+snippet ddp
+  use DDP +{ deparse => 1, use_prototypes => 0 };
 
 snippet sig_die_confess
   $SIG{__DIE__} = \&Carp::confess;
@@ -14,24 +17,23 @@ snippet sig_die_confess
 snippet sig_warn_cluck
   $SIG{__WARN__} = \&Carp::cluck;
 
-snippet class
-  package ${1} {
+snippet pkg
+  package `expand('%:p:s?.*lib/??:r:gs?/?::?')`;
+  use strict;
+  use warnings;
+  use utf8;
 
-    use Mouse;
-    ${2}
-
-  }
+  ${0}
 
   1;
 
-snippet neo_sangoku_entity_class
-  package NeoSangoku::Entity::${1} {
+snippet class
+  package `expand('%:p:s?.*lib/??:r:gs?/?::?')` {
 
-    use Mouse;
-    use NeoSangoku::Exporter;
-    use NeoSangoku::Entity::TableAttributesCreator { table_name => ${2} };
-
-    __PACKAGE__->meta->make_immutable;
+    use v5.28;
+    use Moo;
+    use utf8;
+    ${0}
 
   }
 
@@ -42,7 +44,7 @@ snippet compro_tiny
   use warnings;
   sub read_line { chomp(my $s = <>); $s }
   sub splited_read_line { split / /, read_line }
-  ${1}
+  ${0}
 
 snippet compro
   use v5.18;
@@ -52,7 +54,7 @@ snippet compro
   sub read_line { chomp(my $s = <>); $s }
   sub splited_read_line { split / /, read_line }
   sub unique { my %u; $u{$_} = $_ for @_; values %u; }
-  ${1}
+  ${0}
 
 snippet compro_hard
   use v5.18;
@@ -67,5 +69,5 @@ snippet compro_hard
     *{"${p}::${n}"} = sub { use strict 'refs'; my $s = shift; @_ ? $s->{$n} = shift : $s->{$n} }
   }
 
-  ${1}
+  ${0}
 
