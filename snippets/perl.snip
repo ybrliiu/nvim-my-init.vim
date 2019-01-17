@@ -27,6 +27,19 @@ snippet pkg
 
   1;
 
+snippet eki_mouse_pkg
+  package `expand('%:p:s?.*lib/??:r:gs?/?::?')`;
+  use v5.14;
+  use warnings;
+  use utf8;
+  use Mouse;
+
+  ${0}
+
+  __PACKAGE__->meta->make_immutable;
+
+  1;
+
 snippet class
   package `expand('%:p:s?.*lib/??:r:gs?/?::?')` {
 
