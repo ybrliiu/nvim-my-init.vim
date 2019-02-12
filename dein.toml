@@ -63,13 +63,14 @@ on_i = 1
 hook_add = '''
 let g:ale_sign_column_always = 1
 let g:ale_linters = {
-\   'perl': ['perl'],
+\   'perl': ['perl', 'perlcritic'],
 \   'js': ['eslint'],
 \ }
 
 " Perl
 let g:ale_perl_perl_executable = 'perl'
-let g:ale_perl_perl_options = '-c -Ilib'
+let g:ale_perl_perl_options = '-c -Ilib -It/lib'
+let g:ale_perl_perlcritic_options = 'lib'
 
 " JavaScript
 '''
