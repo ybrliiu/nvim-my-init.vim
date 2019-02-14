@@ -60,6 +60,7 @@ repo = 'Shougo/denite.nvim'
 [[plugins]]
 repo = 'w0rp/ale'
 on_i = 1
+on_ft = ['perl', 'js', 'coffee']
 hook_add = '''
 let g:ale_sign_column_always = 1
 let g:ale_linters = {
