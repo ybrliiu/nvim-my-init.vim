@@ -28,3 +28,7 @@ endfunction
 function! liiu#chomp(string)
   return substitute(a:string, '\n\+$', '', '')
 endfunction
+
+function! liiu#post_slack()
+  let l:result = system( 'eki_dev_perl tmp/post_slack_test.pl ' . liiu#github_link() )
+endfunction
