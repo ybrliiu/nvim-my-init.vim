@@ -13,10 +13,10 @@ hook_add = '''
   let g:deoplete#enable_at_startup = 1
   let g:deoplete#auto_complete_delay = 0
   let g:deoplete#file#enable_buffer_path = 1
-  " For perlomni.vim setting.
-  let g:deoplete#omni_patterns = {}
-  let g:deoplete#omni_patterns.perl = '\h\w*->\h\w*\|\h\w*::'
-  let g:deoplete#delimiters = ['/', '::']
+  " For perlomni.vim setting. (ちょっと重くなるので無効にしておく)
+  " let g:deoplete#omni_patterns = {}
+  " let g:deoplete#omni_patterns.perl = '\h\w*->\h\w*\|\h\w*::'
+  " let g:deoplete#delimiters = ['/', '::']
 '''
 
 [[plugins]]
@@ -72,7 +72,12 @@ let g:ale_linters = {
 \ }
 
 " Perl
-let g:ale_perl_perl_executable = 'eki_dev_perl'
+
+if substitute(system('basename $(pwd)'), '\n\+$', '', '') == 'EkiDashColopl'
+  let g:ale_perl_perl_executable = 'eki_dev_perl'
+else
+  let g:ale_perl_perl_executable = 'perl'
+endif
 let g:ale_perl_perl_options = '-c -Ilib'
 let g:ale_perl_perlcritic_options = '--profile tmp/.perlcriticrc'
 
