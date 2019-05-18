@@ -1,0 +1,2 @@
+" コードはおりたたまない
+setlocal foldmethod=manual
