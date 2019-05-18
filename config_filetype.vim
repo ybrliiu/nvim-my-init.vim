@@ -17,8 +17,9 @@ augroup auto_comment_off
   " htmlのための設定
   autocmd BufNewFile,BufRead *.html.ep  set filetype=eruby.html
 
-  " vue
-  autocmd BufRead,BufNewFile *.vue setlocal filetype=vue.html.javascript.css
+  " vueのための設定, 長いファイルで途中でsyntax highlightが効かなくなることを避けるために,
+  " ファイルの先頭からパースしてハイライトを行う設定を追記
+  autocmd FileType vue syntax sync fromstart
 
 augroup END
 

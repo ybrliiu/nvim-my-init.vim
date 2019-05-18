@@ -13,6 +13,7 @@ hook_add = '''
   let g:deoplete#enable_at_startup = 1
   let g:deoplete#auto_complete_delay = 0
   let g:deoplete#file#enable_buffer_path = 1
+
   " For perlomni.vim setting.
   let g:deoplete#omni_patterns = {}
   let g:deoplete#omni_patterns.perl = '\h\w*->\h\w*\|\h\w*::'
@@ -60,12 +61,19 @@ repo = 'Shougo/denite.nvim'
 [[plugins]]
 repo = 'w0rp/ale'
 on_i = 1
-hook_add = '''
+hook_source = '''
 let g:ale_sign_column_always = 1
 let g:ale_linters = {
 \   'perl': ['perl', 'perlcritic'],
-\   'js': ['eslint'],
+\   'javascript': ['eslint'],
+\   'typescript': ['eslint', 'tsserver', 'typecheck'],
+\   'rust': ['rustc'],
 \ }
+
+" ファイル保存時のみ有効にする
+let g:ale_lint_on_save = 1
+" テキスト変更時は有効にしない
+let g:ale_lint_on_text_changed = 0
 
 " Perl
 let g:ale_perl_perl_executable = 'perl'
@@ -73,6 +81,11 @@ let g:ale_perl_perl_options = '-c -Ilib -It/lib'
 let g:ale_perl_perlcritic_options = 'lib'
 
 " JavaScript
+
+" Rust
+" デフォルトでは -Z と no-codegen オプションが設定されているけど,
+" それらは nightly のコンパイラでしか効かないので消す
+call ale#Set('rust_rustc_options', '')
 '''
 
 [[plugins]]
@@ -132,10 +145,12 @@ on_ft = ['scala']
 [[plugins]]
 repo = 'leafgarland/typescript-vim'
 on_ft = ['typescript']
+hook_post_source = 'let g:tsuquyomi_completion_detail = 1'
 
 [[plugins]]
 repo = 'Quramy/tsuquyomi'
 on_ft = ['typescript']
+hook_add = 'let g:tsuquyomi_disable_quickfix = 1'
 
 [[plugins]]
 repo = 'plasticboy/vim-markdown'
@@ -158,8 +173,11 @@ on_ft = ['rust']
 [[plugins]]
 repo = 'racer-rust/vim-racer'
 on_ft = ['rust']
-hook_add = '''
-  let g:racer_cmd = '/home/leiu/.cargo/bin/racer'
+hook_source = '''
+" racerバイナリ指定
+let g:racer_cmd = "~/.cargo/bin/racer"
+" rust本体のソースコードパス指定
+let $RUST_SRC_PATH="/home/leiu/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/src"
 '''
 
 [[plugins]]
