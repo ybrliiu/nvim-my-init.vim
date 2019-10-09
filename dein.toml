@@ -9,7 +9,7 @@ repo = 'Shougo/dein.vim'
 repo = 'Shougo/deoplete.nvim'
 on_i = 1
 hook_add = '''
-  let g:deoplete#enable_camel_case = 1
+  " let g:deoplete#enable_camel_case = 1
   let g:deoplete#enable_at_startup = 1
   let g:deoplete#auto_complete_delay = 0
   let g:deoplete#file#enable_buffer_path = 1
@@ -68,7 +68,7 @@ hook_add = '''
 let g:ale_sign_column_always = 1
 let g:ale_linters = {
 \   'perl': ['perl', 'perlcritic'],
-\   'js': ['eslint'],
+\   'js': ['jshint'],
 \ }
 
 " Perl

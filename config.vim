@@ -53,4 +53,5 @@ set smartindent
 set splitbelow
 " 新しいウィンドウを右に開く
 set splitright
-
+" ウインドウ分割した際のウインドウサイズ自動調整をoffにする
+set noequalalways
