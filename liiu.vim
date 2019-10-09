@@ -16,12 +16,12 @@ function! liiu#github_link()
   let l:filename         = expand('%')
   let l:head_commit_hash = liiu#chomp( system('git log -n1 --pretty=%H') )
   let l:param            = l:head_commit_hash . '/' . l:filename . '#L' . l:line
-  return 'https://github.com/' . liiu#github_repository_uri() . '/blob/' . l:param
+  return 'https://mfgit.dev/' . liiu#github_repository_uri() . '/blob/' . l:param
 endfunction
 
 function! liiu#github_repository_uri()
   let l:remote_url      = liiu#chomp( system('git remote get-url origin') )
-  let l:repository_name = matchlist(l:remote_url, '\v^git\@github\.com:(.{-1,})\.git$')
+  let l:repository_name = matchlist(l:remote_url, '\v^git\@mfgit\.dev:(.{-1,})\.git$')
   return l:repository_name[1]
 endfunction
 
