@@ -75,10 +75,20 @@ let g:ale_linters = {
 
 if substitute(system('basename $(pwd)'), '\n\+$', '', '') == 'EkiDashColopl'
   let g:ale_perl_perl_executable = 'eki_dev_perl'
+elseif filereadable('./cpanfile')
+  let g:ale_perl_perl_executable = 'carton'
 else
   let g:ale_perl_perl_executable = 'perl'
 endif
-let g:ale_perl_perl_options = '-c -Ilib'
+
+if substitute(system('basename $(pwd)'), '\n\+$', '', '') == 'EkiDashColopl'
+  let g:ale_perl_perl_options = '-c -Ilib'
+elseif filereadable('./cpanfile')
+  let g:ale_perl_perl_options = 'exec -- perl -c'
+else
+  let g:ale_perl_perl_options = '-c -Ilib'
+endif
+
 let g:ale_perl_perlcritic_options = '--profile tmp/.perlcriticrc'
 
 " JavaScript
@@ -123,13 +133,13 @@ repo = 'tpope/vim-fugitive'
 [[plugins]]
 repo = 'scrooloose/nerdtree'
 
-[[plugins]]
-repo = 'hotchpotch/perldoc-vim'
-on_ft = ['perl']
+# [[plugins]]
+# repo = 'hotchpotch/perldoc-vim'
+# on_ft = ['perl']
 
-[[plugins]]
-repo = 'c9s/perlomni.vim'
-on_ft = ['perl']
+# [[plugins]]
+# repo = 'c9s/perlomni.vim'
+# on_ft = ['perl']
 
 [[plugins]]
 repo = 'derekwyatt/vim-scala'
@@ -205,7 +215,7 @@ hook_add = '''
  augroup liiu_set_color_schema
    autocmd!
    autocmd VimEnter * nested colorscheme PaperColor
-   autocmd VimEnter * nested set background=dark
+   autocmd VimEnter * nested set background=light
  augroup END
 '''
 
