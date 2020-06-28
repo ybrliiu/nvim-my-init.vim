@@ -76,9 +76,18 @@ let g:ale_lint_on_save = 1
 let g:ale_lint_on_text_changed = 0
 
 " Perl
-let g:ale_perl_perl_executable = 'perl'
-let g:ale_perl_perl_options = '-c -Ilib -It/lib'
-let g:ale_perl_perlcritic_options = 'lib'
+
+if filereadable('./cpanfile')
+  let g:ale_perl_perl_executable = 'carmel'
+else
+  let g:ale_perl_perl_executable = 'perl'
+endif
+
+if filereadable('./cpanfile')
+  let g:ale_perl_perl_options = 'exec -- perl -c -Ilib'
+else
+  let g:ale_perl_perl_options = '-c -Ilib'
+endif
 
 " JavaScript
 
