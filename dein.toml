@@ -55,15 +55,15 @@ repo = 'Shougo/neoyank.vim'
 [[plugins]]
 repo = 'Shougo/denite.nvim'
 
-[[plugins]]
-repo = 'airblade/vim-gitgutter'
+# [[plugins]]
+# repo = 'airblade/vim-gitgutter'
 
 # シンタクスチェックと警告チェックしてくれるやつ
 # あとでちゃんと設定を調べる
 [[plugins]]
 repo = 'w0rp/ale'
 on_i = 1
-on_ft = ['perl', 'js', 'coffee']
+on_ft = ['perl', 'js']
 hook_add = '''
 let g:ale_sign_column_always = 1
 let g:ale_linters = {
@@ -90,8 +90,6 @@ else
 endif
 
 let g:ale_perl_perlcritic_options = '--profile tmp/.perlcriticrc'
-
-" JavaScript
 '''
 
 [[plugins]]
@@ -127,7 +125,6 @@ repo = 'SirVer/ultisnips'
 # repo = 'Shougo/vimshell.vim'
 
 [[plugins]]
-on_i = 1
 repo = 'tpope/vim-fugitive'
 
 [[plugins]]
@@ -177,10 +174,6 @@ on_ft = ['toml']
 [[plugins]]
 repo = 'posva/vim-vue'
 on_ft = ['vue']
-
-[[plugins]]
-repo = 'kchmck/vim-coffee-script'
-on_ft = ['coffee']
 
 # haskell omni
 [[plugins]]
