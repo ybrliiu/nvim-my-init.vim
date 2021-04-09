@@ -55,3 +55,6 @@ set splitbelow
 set splitright
 " ウインドウ分割した際のウインドウサイズ自動調整をoffにする
 set noequalalways
+
+" 補完時に表示されるプレビューウィンドウを消す
+set completeopt=menu
