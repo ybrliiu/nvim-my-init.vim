@@ -11,8 +11,8 @@ on_i = 1
 hook_add = '''
   " let g:deoplete#enable_camel_case = 1
   let g:deoplete#enable_at_startup = 1
-  let g:deoplete#auto_complete_delay = 0
-  let g:deoplete#file#enable_buffer_path = 1
+  call deoplete#custom#option('auto_complete_delay', 1)
+  call deoplete#custom#var('file', 'enable_buffer_path', 1)
   " For perlomni.vim setting. (ちょっと重くなるので無効にしておく)
   " let g:deoplete#omni_patterns = {}
   " let g:deoplete#omni_patterns.perl = '\h\w*->\h\w*\|\h\w*::'
@@ -149,6 +149,9 @@ on_ft = ['markdown']
 [[plugins]]
 repo = 'aklt/plantuml-syntax'
 on_ft = ['plantuml']
+
+[[plugins]]
+repo = 'github/copilot.vim'
 
 [[plugins]]
 repo = 'rust-lang/rust.vim'
