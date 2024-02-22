@@ -11,8 +11,8 @@ on_i = 1
 hook_add = '''
   let g:deoplete#enable_camel_case = 1
   let g:deoplete#enable_at_startup = 1
-  let g:deoplete#auto_complete_delay = 0
-  let g:deoplete#file#enable_buffer_path = 1
+  call g:deoplete#custom#option("auto_complete_delay", 0)
+  call g:deoplete#custom#var("file", "enable_buffer_path", 1)
 
   " For perlomni.vim setting.
   let g:deoplete#omni_patterns = {}
@@ -204,8 +204,8 @@ on_ft = ['haskell']
 
 ## color schemes
 
-[[plugins]]
-repo = 'nanotech/jellybeans.vim'
+# [[plugins]]
+# repo = 'nanotech/jellybeans.vim'
 # hook_add = '''
 #  augroup liiu_set_color_schema
 #    autocmd!
@@ -214,8 +214,8 @@ repo = 'nanotech/jellybeans.vim'
 #  augroup END
 # '''
 
-[[plugins]]
-repo = 'tomasr/molokai'
+# [[plugins]]
+# repo = 'tomasr/molokai'
 # hook_add = '''
 #  augroup liiu_set_color_schema
 #    autocmd!
@@ -230,12 +230,12 @@ hook_add = '''
  augroup liiu_set_color_schema
    autocmd!
    autocmd VimEnter * nested colorscheme PaperColor
-   autocmd VimEnter * nested set background=dark
+   autocmd VimEnter * nested set background=light
  augroup END
 '''
 
-[[plugins]]
-repo = 'w0ng/vim-hybrid'
+# [[plugins]]
+# repo = 'w0ng/vim-hybrid'
 # hook_add = '''
 # 
 #   " colorscheme 設定は source 後に行う必要があるので VimEnter で行う。
